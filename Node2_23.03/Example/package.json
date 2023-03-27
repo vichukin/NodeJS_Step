@@ -1,0 +1,33 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "first example",
+  "main": "first.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node main.js",
+    "dev": "node first.js Vychkin 3003"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichukin/Nodejsexample.git"
+  },
+  "keywords": [
+    "a",
+    "lot",
+    "of"
+  ],
+  "author": "Vichukin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vichukin/Nodejsexample/issues"
+  },
+  "homepage": "https://github.com/vichukin/Nodejsexample#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jquery": "^3.6.4"
+  },
+  "devDependencies": {
+    "jasmine-node": "^3.0.0"
+  }
+}
