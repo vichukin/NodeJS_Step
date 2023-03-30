@@ -1,0 +1,23 @@
+{
+  "name": "pr2_23.03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm tenoest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichukin/NodeJS_Step.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vichukin/NodeJS_Step/issues"
+  },
+  "homepage": "https://github.com/vichukin/NodeJS_Step#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "webpack": "^5.77.0"
+  }
+}

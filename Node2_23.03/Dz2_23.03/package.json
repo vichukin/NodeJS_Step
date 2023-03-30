@@ -1,0 +1,25 @@
+{
+  "name": "dz2_23.03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichukin/NodeJS_Step.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vichukin/NodeJS_Step/issues"
+  },
+  "homepage": "https://github.com/vichukin/NodeJS_Step#readme",
+  "dependencies": {
+    "jquery": "^3.6.4",
+    "react": "^18.2.0",
+    "underscore": "^1.13.6"
+  }
+}
