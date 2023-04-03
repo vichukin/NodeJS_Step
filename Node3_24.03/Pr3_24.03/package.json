@@ -1,0 +1,14 @@
+{
+  "name": "pr3_24.03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.77.0"
+  }
+}
