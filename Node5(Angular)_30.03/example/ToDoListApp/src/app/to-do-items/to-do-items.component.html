@@ -1,0 +1,31 @@
+
+<p><span>Id:</span>{{toDoItem.id}}</p>
+<p><span>Name:</span>{{toDoItem.name}}</p>
+<p><span class="red">isFinished:</span>{{toDoItem.isFinished ? 'yes':'no'}}</p>
+<ul class="items">
+  <li *ngFor="let item of itemsList" class="items">
+    {{item.name}}
+  </li>
+</ul>
+<hr>
+<div *ngIf="itemsList.length>0">
+  {{itemsList.length}}
+  <span [ngSwitch]="itemsList.length">
+    <span *ngSwitchCase="1">справа</span>
+    <span *ngSwitchCase="2">справи</span>
+    <span *ngSwitchCase="3">справи</span>
+    <span *ngSwitchCase="4">справи</span>
+    <span *ngSwitchDefault>справ</span>
+  </span>
+</div>
+<footer>
+
+  <div>
+    <a [href]="homePageURL" [class.redFont]="true" [class.blueFont]="blueFont">Path Of Exile</a>
+    <br>
+    <a href="google.com" [ngClass]="{googleClasses}">GOOGLE</a>
+  </div>
+
+  <input type="checkbox" [(ngModel)]="blueFont">
+  <label [ngStyle]="lblStyles">Blue Font</label>
+</footer>
