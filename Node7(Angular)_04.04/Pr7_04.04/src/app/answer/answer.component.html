@@ -1,0 +1,10 @@
+<div>
+  <button (click)="Changebtn(data[0].Title)">{{data[0].Title|uppercase}}</button>
+<button (click)="Changebtn(data[1].Title)">{{data[1].Title|uppercase}}</button>
+<button (click)="Changebtn(data[2].Title)">{{data[2].Title|uppercase}}</button>
+</div>
+<div *ngIf="SelectedArticle">
+  <hr>
+  <h2>{{SelectedArticle.Title}}</h2>
+ <p>{{SelectedArticle.Description}}</p>
+</div>
