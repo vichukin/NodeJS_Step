@@ -3,12 +3,23 @@
 <p><span>Name:</span>{{toDoItem.name}}</p>
 <p><span class="red">isFinished:</span>{{toDoItem.isFinished ? 'yes':'no'}}</p>
 <ul class="items">
-  <li *ngFor="let item of itemsList" class="items">
+  <li *ngFor="let item of itemsList" (click)="onSelect(item)" class="items" [class.selected]="selectedItem==item">
     {{item.name}}
   </li>
 </ul>
 <hr>
-<div *ngIf="itemsList.length>0">
+<div class="editform" *ngIf="selectedItem">
+  <div>
+    <label>Title</label>
+    <input [(ngModel)]="selectedItem.name">
+  </div>
+  <div>
+    <label>Is finished?</label>
+    <input type="checkbox" [(ngModel)]="selectedItem.isFinished">
+  </div>
+</div>
+<hr>
+<div *ngIf="itemsList.length>0" >
   {{itemsList.length}}
   <span [ngSwitch]="itemsList.length">
     <span *ngSwitchCase="1">справа</span>

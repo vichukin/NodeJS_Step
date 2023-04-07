@@ -11,7 +11,11 @@ p>span{
 
   width: 30em;
 }
+.items li.selected{
+  background-color: #607D8E;
 
+  color: #EEE;
+}
 .items li{
 
   background-color: #EEE;
@@ -32,9 +36,9 @@ p>span{
 
 .items li:hover{
 
-  background-color: #DDD;
+  background-color: #607D8E;
 
-  color: #607D8E;
+  color: #DDD;
 
 }
 
@@ -49,4 +53,8 @@ p>span{
   font-family: 'Segoe UI',  sans-serif;
   color:blue;
   background-color: #DDD;
+}
+
+.editForm input[type="text"]{
+
 }

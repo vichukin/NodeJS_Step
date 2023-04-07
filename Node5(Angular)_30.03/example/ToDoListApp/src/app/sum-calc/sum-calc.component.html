@@ -1,0 +1,13 @@
+
+  <div>
+    <label for="" class="form-label">Argument 1:</label>
+    <input type="number" class="form-control" [(ngModel)]="num1">
+  </div>
+  <div>
+    <label for="" class="form-label">Argument 2:</label>
+    <input type="number" class="form-control" [(ngModel)]="num2">
+  </div>
+  <button class="btn btn-sm btn-primary" (click)="add()">Calculate</button>
+  <div *ngIf="done">
+    <h2>Sum = {{sum}}</h2>
+  </div>

@@ -24,6 +24,10 @@ export class ToDoItemsComponent {
   }
   homePageURL:string = "https://ru.pathofexile.com/crucible";
   itemsList: ToDoItem[] = ITEMS;
+  onSelect(item: ToDoItem):void{
+    this.selectedItem=item;
+  }
+  selectedItem?: ToDoItem; //= {isFinished=false};
   blueFont:boolean=false;
 
   days: string[]=["Понедельник","Вторник","Среда","Четверг"]
