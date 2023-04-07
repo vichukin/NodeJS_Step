@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from '../Info.service';
 
 @Component({
   selector: 'app-expirience',
@@ -9,11 +10,11 @@ export class ExpirienceComponent implements OnInit {
 
   ExpWork?:number;
   ExpStudy?:number;
-  constructor() { }
+  constructor(private info: InfoService) { }
 
   ngOnInit() {
-    this.ExpWork = 0;
-    this.ExpStudy=1.5;
+    this.ExpWork = this.info.GetExpWork();
+    this.ExpStudy= this.info.GetExpStudy();
   }
 
 }

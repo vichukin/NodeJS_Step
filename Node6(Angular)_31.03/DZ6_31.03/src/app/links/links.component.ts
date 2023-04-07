@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from '../Info.service';
 
 @Component({
   selector: 'app-links',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class LinksComponent implements OnInit {
 
   Links:string[]=[];
-  constructor() { }
+  constructor(private info: InfoService) { }
 
   ngOnInit() {
-    this.Links.push("https://github.com/vichukin","https://www.linkedin.com/in/дима-вычкин-038175271/");
+    this.Links=this.info.GetLinks();
   }
 
 }
