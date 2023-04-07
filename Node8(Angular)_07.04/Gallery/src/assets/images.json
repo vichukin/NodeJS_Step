@@ -1,0 +1,25 @@
+{
+  "Images":[
+    {
+      "Url": "../../assets/img1.jpg",
+      "Author": "Leonardo da Vinci",
+      "Place": "Louvre",
+      "Title": "Mona Lisa",
+      "Year": 1503
+    },
+    {
+      "Url": "../../assets/img2.jpg",
+      "Author": "Vincent van Gogh",
+      "Place": "New York",
+      "Title": "The Starry Night",
+      "Year": 1889
+    },
+    {
+      "Url": "../../assets/img3.jpg",
+      "Author": "Sandro Botticelli",
+      "Place": "The Vatican collection",
+      "Title": "The Map of Hell",
+      "Year": 1480
+    }
+  ]
+}
