@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row w-25" >
+    <div>
+      <label class="control-label">User name:</label>
+      <input type="text" class="form-control" [(ngModel)]="user.name">
+    </div>
+    <div>
+      <label class="form-label">User age:</label>
+      <input type="number" class="form-control" [(ngModel)]="user.age">
+    </div>
+    <div>
+      <button (click)="submit()" class="btn btn-success w-100">Add user</button>
+      <button (click)="clear()" class="btn btn-primart w-100">Clear </button>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="done">
+    <p>{{user.name}}</p>
+    <p>{{user.age}}</p>
+  </div>
+</div>
