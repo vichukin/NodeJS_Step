@@ -1,0 +1,57 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+.wrap{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+}
+header{
+  background-color: cadetblue;
+  color: white;
+  grid-column: span 12;
+}
+aside{
+  background-color: rgb(147, 180, 243);
+  grid-column: span 3;
+}
+main{
+  background-color: #DDD;
+  grid-column: 4/span 6;
+  height: auto;
+}
+.wrap div.right-bar{
+  background-color: azure;
+  grid-column: 10/span 3;
+  height: 200px;
+}
+.wrap footer{
+  background-color: lavender;
+  grid-column: span 12;
+  height: 200px;
+}
+.wrap nav ul li{
+  
+  display: inline-block;
+}
+.wrap nav ul{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+.wrap nav ul a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px 40px;
+  display: inline-block;
+}
+.wrap nav ul li:last-child{
+  margin-left: auto;
+}
+.wrap nav ul li:hover{
+  background-color: rgb(75, 119, 121);
+}
+
+.wrap nav ul li:hover a{
+  text-decoration: underline;
+
+}
