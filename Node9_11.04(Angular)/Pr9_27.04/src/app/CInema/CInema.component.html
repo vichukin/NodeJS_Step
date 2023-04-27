@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container"  >
+    <div class="w-25" >
+    <label class="control"> Title
+      <input type="text" class="form-control" name="Title" id="Title" [(ngModel)]="title">
+      <button (click)="Submit()" class="btn btn-success">Find</button>
+    </label>
+
+
+    </div >
+    <div *ngIf="Movie">
+      <img src={{Movie.Poster}} alt={{Movie.Title}}>
+      <h2>{{Movie.Title}}</h2>
+      <h3>Year - {{Movie.Year}}</h3>
+      <h3>Rated - {{Movie.Rated}}</h3>
+      <h3>Runtime - {{Movie.Runtime}}</h3>
+      <h3>Actors - {{Movie.Actors}}</h3>
+
+    </div>
+  </div>
+</body>
+</html>
