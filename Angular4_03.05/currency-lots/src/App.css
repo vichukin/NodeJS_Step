@@ -58,6 +58,17 @@ header{
 .card-h-bg{
   background-color: rgb(252, 215, 148);;
 }
-.flex{
+.flexheader{
   display: flex;
+  background-color: rgb(247, 207, 132);
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+.flexlbl{
+  display: flex;
+  vertical-align: middle;
+}
+.flexlbl h4{
+  padding-top: 2%;
+  margin-right: 5%;
 }

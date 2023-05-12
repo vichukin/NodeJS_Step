@@ -35,8 +35,41 @@ namespace Server
             PeekedMessage[] messages = azureresponse.Value;
             List<Lot> list = new List<Lot>();
             foreach(var item in messages)
-                list.Add(JsonSerializer.Deserialize<Lot>(item.Body));
+                list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
             return list;
+        }
+        [HttpGet("from/{from}")]
+        public async Task<ActionResult<IEnumerable<Lot>>> GetLotsFrom(string from)
+        {
+            QueueClient client = await CreateQueueClient("lots");
+            var azureresponse = await client.PeekMessagesAsync(maxMessages:10);
+            PeekedMessage[] messages = azureresponse.Value;
+            List<Lot> list = new List<Lot>();
+            foreach(var item in messages)
+                list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
+            return list.Where(t=>t.OwnerCurrency==from).ToList();
+        }
+        [HttpGet("to/{to}")]
+        public async Task<ActionResult<IEnumerable<Lot>>> GetLotsTo(string to)
+        {
+            QueueClient client = await CreateQueueClient("lots");
+            var azureresponse = await client.PeekMessagesAsync(maxMessages:10);
+            PeekedMessage[] messages = azureresponse.Value;
+            List<Lot> list = new List<Lot>();
+            foreach(var item in messages)
+                list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
+            return list.Where(t=>t.RequiredCurrency==to).ToList();
+        }
+        [HttpGet("{from}/{to}")]
+        public async Task<ActionResult<IEnumerable<Lot>>> GetLots(string from,string to)
+        {
+            QueueClient client = await CreateQueueClient("lots");
+            var azureresponse = await client.PeekMessagesAsync(maxMessages:10);
+            PeekedMessage[] messages = azureresponse.Value;
+            List<Lot> list = new List<Lot>();
+            foreach(var item in messages)
+                list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
+            return list.Where(t=>t.OwnerCurrency==from&&t.RequiredCurrency==to).ToList();
         }
         private async Task<QueueClient> CreateQueueClient(string QueueName)
         {
