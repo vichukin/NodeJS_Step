@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HtttpServiceService } from '../htttp-service.service';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createuser',
@@ -11,15 +12,16 @@ import { User } from '../user';
 export class CreateuserComponent implements OnInit {
   user: User=new User("",0);
   done: boolean=false;
-  constructor(private http: HtttpServiceService) { }
+  constructor(private http: HtttpServiceService, private router: Router) { }
 
   ngOnInit() {
   }
   submit(){
     this.http.postUser(this.user).subscribe((data:any)=>{
-      this.user=data;
-      console.log(this.user);
-      this.done=true;
+      if(data!=null)
+      {
+        this.router.navigateByUrl("/users")
+      }
     })
 
   }

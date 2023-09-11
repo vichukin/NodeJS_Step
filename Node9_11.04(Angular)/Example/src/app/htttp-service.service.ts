@@ -10,7 +10,10 @@ export class HtttpServiceService {
 constructor(private http: HttpClient) { }
  postUser(user: User)
  {
-   return this.http.post("http://localhost:3000/create",user);
+   return this.http.post("http://localhost:3000/users",user);
+ }
+ GetUser(Id:number){
+  return this.http.get(`http://localhost:3000/users/${Id}` );
  }
  GetUsers(){
   return this.http.get("http://localhost:3000/users" );

@@ -23,21 +23,13 @@ export class UsersComponent implements OnInit {
         {
           let deleteduser = this.users?.findIndex(elem=>elem.id===data.id);
           this.users?.splice(deleteduser!,1);
+          // console.log(this.users);
         }
      })
   }
-  putUser(user:User)
-  {
-    this.http.putUser(user).subscribe((data:any)=>{
-      if(data.statusCode!="404")
-        {
-          let deleteduser = this.users?.find(elem=>elem.id===data.id)!;
-          deleteduser.age= data.age;
-          deleteduser.name = data.name;
-        }
-     })
+
+  gotoEdit(Id:number){
+    this.router.navigateByUrl(`/edit?id=${Id}`)
   }
-  gotoEdit(user: User){
-    this.router.navigateByUrl(`/edit?id=${user.id}`)
-  }
+
 }

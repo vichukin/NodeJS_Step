@@ -2,8 +2,18 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const jsonParser = express.json();
-const pgp = require("pg-promise")
+const pgp = require("pg-promise")();
 const db = pgp("postgres://postgres:Qwerty1234@localhost:5432/ExampleDB");
+
+// const connectionConfig = {
+//     database: 'ExampleDB',
+//     user: 'postgres',
+//     password: 'Qwerty1234',
+//     host: 'localhost',
+//     port: 5432,
+// };
+
+// const db = pgp(connectionConfig);
 app.use((req,resp,next)=>{
     resp.setHeader("Access-Control-Allow-Origin","*");
     resp.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-type, Accept");
@@ -20,21 +30,15 @@ app.use((req,resp,next)=>{
 // })
 app.post("/users", jsonParser, async (req, resp)=>{
 
-    console.log("Req obtained!");
-
     if(!req.body)
+        resp.sendStatus(404);
 
-    resp.sendStatus(404);
-
-    console.log(req.body);
-
+    
     let username = req.body.name;
 
     let userage = req.body.age;
 
-    userage = userage+10;
-
-    await db.none('INSERT INTO public."Users"(name, age) VALUES(${name}, ${age})', {
+    await db.none('INSERT INTO Users(name, age) VALUES(${name}, ${age})', {
 
         name: username,
 
@@ -46,26 +50,26 @@ app.post("/users", jsonParser, async (req, resp)=>{
 
 });
 app.get("/users",jsonParser,async (req,resp)=>{
-    let data = await db.query('Select name,age from public."Users');
+    let data = await db.query('Select * from Users');
     resp.json(data);
 })
-app.get("/users:id",jsonParser,async (req,resp)=>{
+app.get("/users/:id",jsonParser,async (req,resp)=>{
     let id = req.params.id;
-    let data = await db.one(`Select name,age from public."Users" where id=${id}`);
+    let data = await db.one(`Select * from Users where id=${id}`);
 
     resp.json(data);
 })
-app.delete("/users:id",jsonParser,async (req,resp)=>{
+app.delete("/users/:id",jsonParser,async (req,resp)=>{
     let id = req.params.id;
-    let result = await db.one(`Delete from public."Users" where id=${id} returning id`);
-    result.message="successs";
+    let result = await db.one(`Delete from Users where id=${id} returning id`);
+    result.message="success";
     resp.json(result);
 });
 app.put("/users/:id",jsonParser,async (req,resp)=>{
     let id = req.params.id;
     if(!id)
         resp.sendStatus(404);
-    let user = await db.one(`Select name,age from public."Users" where id=${id}`);
+    let user = await db.one(`Select * from Users where id=${id}`);
     if(!user)
         resp.sendStatus(404);
     if(!req.body)
@@ -74,7 +78,8 @@ app.put("/users/:id",jsonParser,async (req,resp)=>{
         resp.sendStatus(404);
     user.name=req.body.name;
     user.age=req.body.age;
-    await db.none('UPDATE public."Users" set name=${name}, age = ${age}  where id=${id}', {
+    console.log("put")
+    await db.none('UPDATE Users set name=${name}, age = ${age}  where id=${id}', {
 
         name: user.name,
 

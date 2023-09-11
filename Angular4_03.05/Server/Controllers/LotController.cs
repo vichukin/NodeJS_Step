@@ -38,6 +38,25 @@ namespace Server
                 list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
             return list;
         }
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
+        // {
+        //     QueueClient client = await CreateQueueClient("lots");
+        //     var azureresponse = await client.ReceiveMessagesAsync(maxMessages:10);
+        //     QueueMessage[] messages = azureresponse.Value;
+        //     List<Message> list = new List<Message>();
+        //     foreach(var item in messages)
+        //     {
+        //         Message msg = new Message(){
+        //             MessageId=item.MessageId,
+        //             PopReceipt=item.PopReceipt,
+        //             Lot = JsonSerializer.Deserialize<Lot>(item.Body)!
+        //         };
+        //         list.Add(msg);
+        //     }
+                
+        //     return list;
+        // }
         [HttpGet("from/{from}")]
         public async Task<ActionResult<IEnumerable<Lot>>> GetLotsFrom(string from)
         {
@@ -49,6 +68,24 @@ namespace Server
                 list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
             return list.Where(t=>t.OwnerCurrency==from).ToList();
         }
+        // [HttpGet("from/{from}")]
+        // public async Task<ActionResult<IEnumerable<Message>>> GetMessagesFrom(string from)
+        // {
+        //     QueueClient client = await CreateQueueClient("lots");
+        //    var azureresponse = await client.ReceiveMessagesAsync(maxMessages:10);
+        //     QueueMessage[] messages = azureresponse.Value;
+        //     List<Message> list = new List<Message>();
+        //     foreach(var item in messages)
+        //     {
+        //         Message msg = new Message(){
+        //             MessageId=item.MessageId,
+        //             PopReceipt=item.PopReceipt,
+        //             Lot = JsonSerializer.Deserialize<Lot>(item.Body)!
+        //         };
+        //         list.Add(msg);
+        //     }
+        //     return list.Where(t=>t.Lot.OwnerCurrency==from).ToList();
+        // }
         [HttpGet("to/{to}")]
         public async Task<ActionResult<IEnumerable<Lot>>> GetLotsTo(string to)
         {
@@ -60,6 +97,24 @@ namespace Server
                 list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
             return list.Where(t=>t.RequiredCurrency==to).ToList();
         }
+        // [HttpGet("to/{to}")]
+        // public async Task<ActionResult<IEnumerable<Message>>> GetMessagesTo(string to)
+        // {
+        //     QueueClient client = await CreateQueueClient("lots");
+        //      var azureresponse = await client.ReceiveMessagesAsync(maxMessages:10);
+        //     QueueMessage[] messages = azureresponse.Value;
+        //     List<Message> list = new List<Message>();
+        //     foreach(var item in messages)
+        //     {
+        //         Message msg = new Message(){
+        //             MessageId=item.MessageId,
+        //             PopReceipt=item.PopReceipt,
+        //             Lot = JsonSerializer.Deserialize<Lot>(item.Body)!
+        //         };
+        //         list.Add(msg);
+        //     }
+        //     return list.Where(t=>t.Lot.RequiredCurrency==to).ToList();
+        // }
         [HttpGet("{from}/{to}")]
         public async Task<ActionResult<IEnumerable<Lot>>> GetLots(string from,string to)
         {
@@ -71,6 +126,34 @@ namespace Server
                 list.Add(JsonSerializer.Deserialize<Lot>(item.Body)!);
             return list.Where(t=>t.OwnerCurrency==from&&t.RequiredCurrency==to).ToList();
         }
+        // [HttpGet("{from}/{to}")]
+        // public async Task<ActionResult<IEnumerable<Message>>> GetMessages(string from,string to)
+        // {
+        //     QueueClient client = await CreateQueueClient("lots");
+        //     var azureresponse = await client.ReceiveMessagesAsync(maxMessages:10);
+        //     QueueMessage[] messages = azureresponse.Value;
+        //     List<Message> list = new List<Message>();
+        //     foreach(var item in messages)
+        //     {
+        //         Message msg = new Message(){
+        //             MessageId=item.MessageId,
+        //             PopReceipt=item.PopReceipt,
+        //             Lot = JsonSerializer.Deserialize<Lot>(item.Body)!
+        //         };
+        //         list.Add(msg);
+        //     }
+        //     return list.Where(t=>t.Lot.OwnerCurrency==from&&t.Lot.RequiredCurrency==to).ToList();
+        // }
+        // [HttpDelete]
+        // public async Task<IActionResult> DeleteMessage(Message message)
+        // {
+        //     QueueClient client = await CreateQueueClient("lots");
+        //     var azureresponse = await client.DeleteMessageAsync(message.MessageId,message.PopReceipt);
+        //     if(!azureresponse.IsError)
+        //         return Ok();
+        //     else
+        //         return NotFound();
+        // }
         private async Task<QueueClient> CreateQueueClient(string QueueName)
         {
             //QueueServiceClient queueService = new QueueServiceClient(connStr);
