@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import {FirstJSX,FirstCreate} from './first';
+import Second from './second';
+import Third from './third';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <hr></hr>
+      <h1>First:</h1>
+      <FirstJSX></FirstJSX>
+      <FirstCreate></FirstCreate>
+      <hr></hr>
+      <h1>Second:</h1>
+      <Second></Second>
+      <hr></hr>
+      <h1>Third:</h1>
+      <Third></Third>
+      <hr></hr>
+    </>
   );
 }
-
 export default App;
