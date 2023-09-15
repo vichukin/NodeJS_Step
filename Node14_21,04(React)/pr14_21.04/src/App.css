@@ -1,0 +1,9 @@
+ul{
+  list-style: none;
+  display: flex;
+}
+li{
+  padding: 1%;
+  background-color: rgb(240,240,240);
+  width: max-content;
+}
