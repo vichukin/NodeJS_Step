@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\Server.csproj": {}
+    "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\Server.csproj": {
+    "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\artuo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\obj\\",
+        "outputPath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

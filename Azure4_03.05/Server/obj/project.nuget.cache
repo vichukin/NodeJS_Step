@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JHhkc2dJj/6+jD/+2YvhVxLxhKiSiZ7UiFW679leHsddNWnCLDxM3j4FoXKapnHwWcKkBFwWJFC/KG8LueSS2g==",
+  "dgSpecHash": "+ud3kmUT2kn3/RvcnNVLMOK6pDn5Aw7To9xorAWiNLeLGRbPsSJl32wjmU86tt/RCRa09r6oV0HmcpbzFgufxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Angular4_03.05\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\artuo\\Desktop\\NodeJS_Step\\Azure4_03.05\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artuo\\.nuget\\packages\\azure.core\\1.31.0\\azure.core.1.31.0.nupkg.sha512",
     "C:\\Users\\artuo\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
